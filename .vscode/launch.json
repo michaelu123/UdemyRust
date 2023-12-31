@@ -4,39 +4,10 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable",
+            "name": "Debug Rust",
             "cargo": {
-                "args": [
-                    "build",
-                    "--bin=${fileDirname}",
-                    "--package=${fileDirname}"
-                ],
-                "filter": {
-                    "name": "${fileDirname}",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${fileDirname}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug unit tests in executable",
-            "cargo": {
-                "args": [
-                    "test",
-                    "--no-run",
-                    "--bin=${fileDirname}",
-                    "--package=${fileDirname}"
-                ],
-                "filter": {
-                    "name": "${fileDirname}",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${fileDirname}"
+            "args": ["build", "--manifest-path", "${fileDirname}/../Cargo.toml"]
+            }
         }
     ]
 }

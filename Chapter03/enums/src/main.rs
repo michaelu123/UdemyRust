@@ -8,9 +8,16 @@ enum PermissionLevel {
 impl PermissionLevel {
     fn description(&self) -> String {
         match self {
-            PermissionLevel::User => String::from("I am an User"),
-            PermissionLevel::Instructor => String::from("I am an Instructor"),
+            Self::User => String::from("I am an User"),
+            Self::Instructor => String::from("I am an Instructor"),
             PermissionLevel::Admin => String::from("I am an Admin"),
+        }
+    }
+    fn description2(&self) -> &str {
+        match self {
+            Self::User => "I am an User",
+            Self::Instructor => "I am an Instructor",
+            PermissionLevel::Admin => "I am an Admin",
         }
     }
 }
@@ -26,5 +33,5 @@ fn main() {
 
     let user3 = PermissionLevel::User;
     println!("{:?}", user3);
-    println!("{}", user3.description());
+    println!("{}", user3.description2());
 }

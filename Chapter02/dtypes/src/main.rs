@@ -1,9 +1,10 @@
 fn main() {
-    let _x1: i8 = 0;
-    let _x2: i16 = 0;
-    let _x3: i32 = 0;
-    let _x4: i64 = 0;
+    let _x1: i8 = i8::MIN;
+    let _x2: i16 = i16::MIN;
+    let _x3: i32 = i32::MIN;
+    let _x4: i64 = i64::MIN;
     let _x5: i128 = i128::MIN;
+    println!("{}, {}, {}, {}, {}", _x1, _x2, _x3,_x4,_x5);
 
     let _x1: u8 = u8::MAX;
     let _x2: u16 = u16::MAX;
@@ -11,7 +12,7 @@ fn main() {
     let _x4: u64 = u64::MAX;
     let _x5: u128 = u128::MAX;
 
-    println!("{}, {}, {}", _x1, _x2, _x3);
+    println!("{}, {}, {}, {}, {}", _x1, _x2, _x3,_x4,_x5);
 
     let _dec = 255;
     println!("dec: {}", _dec);

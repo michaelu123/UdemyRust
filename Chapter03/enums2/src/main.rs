@@ -2,8 +2,9 @@
 enum LoginData {
     None,
     Invalid,
-    Not_Registered,
+    NotRegistered,
     Username(String),
+    Other(i8)
 }
 
 fn main() {
@@ -12,4 +13,13 @@ fn main() {
 
     let admin = LoginData::Username(String::from("franneck94"));
     println!("{:?}", admin);
+
+    let inv = LoginData::Invalid;
+    println!("{:?}", inv);
+
+    let nr = LoginData::NotRegistered;
+    println!("{:?}", nr);
+
+    let ot = LoginData::Other(3);
+    println!("{:?}", ot);
 }

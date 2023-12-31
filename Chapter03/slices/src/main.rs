@@ -2,6 +2,8 @@ use std::mem;
 
 fn print_slice(slice: &[i32]) {
     println!("Slice: {:?}", &slice);
+    println!("sl length: {}", slice.len());
+    println!("sl data size: {}", mem::size_of_val(&slice));
 }
 
 fn main() {

@@ -6,29 +6,30 @@ enum PermissionLevel {
 }
 
 impl PermissionLevel {
-    fn description(&self) -> String {
-        match self {
-            PermissionLevel::User => String::from("I am an User"),
-            PermissionLevel::Instructor => String::from("I am an Instructor"),
-            PermissionLevel::Admin => String::from("I am an Admin"),
-        }
-    }
-
     fn is_admin(&self) -> bool {
         let ret = if let PermissionLevel::Admin = self {
             true
         } else {
             false
-        }
+        };
 
         ret
+    }
+
+    fn is_admin2(&self) -> bool {
+        if let PermissionLevel::Admin = self {
+            true
+        } else {
+            false
+        }
     }
 }
 
 fn main() {
     let user1 = PermissionLevel::Admin;
     println!("{:?}", user1);
-    println!("{}", user1.is_admin());
+    println!("1{}", user1.is_admin());
+    println!("2{}", user1.is_admin2());
 
     let user2 = PermissionLevel::Instructor;
     println!("{:?}", user2);

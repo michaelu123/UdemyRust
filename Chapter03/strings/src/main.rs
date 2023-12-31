@@ -17,13 +17,15 @@ fn main() {
     hello.push('w');
     println!("{}", hello);
 
-    for b in hello.bytes() {
+    println!("{}","1----------");
+    for b in hello.as_bytes() {
         println!("{}", b);
     }
-
+    println!("{}","2----------");
     for c in hello.chars() {
         println!("{}", c);
     }
+    println!("{}","3----------");
 
     let word = first_word(&hello);
     println!("First word: {}", word);

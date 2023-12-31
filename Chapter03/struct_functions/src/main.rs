@@ -3,6 +3,10 @@ struct Circle {
     radius: f32,
 }
 
+fn compute_area2(c: &Circle) -> f32 {
+    c.radius * c.radius * 3.14159265359
+}
+
 impl Circle {
     fn compute_area(&self) -> f32 {
         self.radius * self.radius * 3.14159265359
@@ -23,6 +27,7 @@ fn main() {
 
     println!("C1 Area: {}", c1.compute_area());
     println!("C1 Circumference: {}", c1.compute_circumference());
+    println!("C1_2 Area: {}", compute_area2(&c1));
 
     println!("C2 Area: {}", c2.compute_area());
     println!("C2 Circumference: {}", c2.compute_circumference());
