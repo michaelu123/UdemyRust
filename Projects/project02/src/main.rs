@@ -44,7 +44,11 @@ fn read(args: &Arguments) -> String {
 fn replace(search_target: &str, replacement: &str, data: &str) -> Result<String, regex::Error> {
     let regex = Regex::new(search_target)?;
 
-    Ok(regex.replace_all(data, replacement).to_string())
+    // Ok(regex.replace_all(data, replacement).to_string())
+    let a = regex.replace_all(data, replacement);
+    let b = a.to_string();
+    let c = Ok(b);
+    c
 }
 
 fn write(args: &Arguments, data: &String) {
@@ -54,7 +58,7 @@ fn write(args: &Arguments, data: &String) {
             eprintln!(
                 "{} Failed to write to file {}!",
                 "ERROR".red(),
-                &args.input_file
+                &args.output_file
             );
             std::process::exit(1);
         }

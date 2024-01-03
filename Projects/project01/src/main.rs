@@ -8,7 +8,7 @@ fn main() {
 
     let secret_number = rand::thread_rng().gen_range(1..=100);
 
-    'game_loop: loop {
+    /*'game_loop:*/ loop {
         println!("Please enter your number: ");
 
         let mut guess = String::new();
@@ -27,7 +27,7 @@ fn main() {
             Ordering::Less => println!("{}", "Too small!".red()),
             Ordering::Equal => {
                 println!("{}", "You win!".green());
-                break 'game_loop;
+                break /*'game_loop*/;
             }
             Ordering::Greater => println!("{}", "Too big!".red()),
         }
